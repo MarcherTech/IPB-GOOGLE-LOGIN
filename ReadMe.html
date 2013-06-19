@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Robert Marcher" />
+		<meta name="copyright" content="2012 Marcher Technologies" />
+		<title>Sign in through Google 1.0.6</title>
+		<style type="text/css" media="all">
+			html, body, h1, h2, h3, h4, div, p, dl { margin: 0; padding: 0; }
+			body { background: #021e2c; color: #fff; font-size: 12px; font-family: Verdana, Arial, "Trebuchet MS", "Times New Roman"; width: 800px; margin: auto; }
+			h1, h2, h3, h4 { font-weight: normal; }
+			a { color: #444; text-decoration: none; } a:hover { text-decoration: underline; }
+			#header { background: #021e2c; padding: 20px; color: #f1f1f1; font-size: 22px; border-bottom: 1px solid #222; }
+			#fileInfo { background: #f1f1f1; padding: 20px; border-top: 1px solid #fff; border-bottom: 1px solid #222; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+			#fileInfo h3 { font-size: 16px; color: #444; padding: 0 0 3px 0; margin: 0 0 3px 0; border-bottom: 1px solid #999; letter-spacing: -0.5px; }
+			#fileInfo dl { color: #444; margin-bottom: 10px; }
+			#fileInfo dt, dd { padding: 3px 0; border-bottom: 1px solid #e1e1e1; }
+			#fileInfo dt { float: left; font-weight: bold; }
+			#fileInfo dd { text-align: right; }
+			#fileInfo p { color: #444; }
+			#content { padding: 20px; }
+			#content h3 { font-size: 16px; padding: 0 0 5px 0; margin: 0 0 5px 0; border-bottom: 1px solid #03283a; }
+			#content p { margin: 0 0 40px 0; }
+			#content a { color: #fff; text-decoration: underline; }
+			#cr { position: fixed; bottom: 20px; right: 20px; color: #818f96; }
+			#cr a { color: #818f96; }
+		</style>
+	</head>
+	<body>
+		<div id="header">Sign in through Google 1.0.6</div>
+		<div id="fileInfo">
+			<h3>File Information</h3>
+			<dl>
+				<dt>Type:</dt>
+					<dd>Login Method+</dd>
+				<dt>Title:</dt>
+					<dd>Sign in through Google</dd>
+				<dt>Version:</dt>
+					<dd>1.0.6 (10006)</dd>
+				<dt>Compatibility:</dt>
+					<dd>IP.Board 3.2.x - 3.4.x</dd>
+				<dt>Author:</dt>
+					<dd>Marcher Technologies</dd>
+				<dt>Website:</dt>
+					<dd><a target="_blank" href="http://www.marchertech.com">Marcher Technologies</a></dd>
+			</dl>
+			<h3>Description</h3>
+			<p>
+	This plugin will allow new users to sign into your forum through the Google OAuth authentication system.
+This Plugin Will also Allow you to Associate/Disassociate an existing forum account to a Google Account, and Import your Profile Photo from Google.
+			</p>
+		</div>
+		<div id="content">
+		<h3>Step 1: Upload the Files</h3>
+			<p>
+			Log in to your Website FTP server via your preferred File Transfer Protocol Client and upload the contents of the /upload/ directory to the root of Your IPB directory.<br />
+			If you have customized your admin directory,  upload the contents of /upload/admin/ to that directory instead.
+			</p>
+				<h3>Step 2: Import the Hook</h3>
+			<p>
+				Log in to your IP.Board Admin CP and visit the <b>System </b>tab -> <b>Applications &amp; Modules</b> tab ->  <b>Manage Hooks </b>page.<br /> In the 'Install Hook' section, browse to the XML file included with these instructions and click <b>Open</b>.
+			</p>
+			<h3>Step 3: Configure Your Web Application And Settings:</h3>
+			<p>
+			You *must* set up a Google Web Application. You can do that <a target="_blank" href="https://code.google.com/apis/console#access">here</a><br />
+			You need no services, go directly to the API Access tab and click <b>Create New Web Application</b>.<br />
+The Redirect URI's *must* include {board_url}/interface/board/google.php <b>AND</b> {board_url}/interface/board/linkgoogle.php<br />
+You *must* also provide the resulting Google Client ID and Google Client Secret for the Web Application you make.<br />
+You *should* also configure the Google "Real Name/Display Name" and Google Default member group.<br />
+All of these Settings are Available from your IP.Board Admin CP <b>System </b>tab -> <b>Applications &amp; Modules </b>tab -> <b>Community Enhancements </b>tab -> <b>Sign In with Google</b> page.
+			</p>
+			<h3>Step 4: Install and enable the Login Module</h3>
+			<p>
+				Log in to your IP.Board Admin CP and visit the <b>System </b>tab -> <b>Tools &amp; Settings</b>tab ->  <b>Login Management </b>page.<br /> In the 'Other Available Login Handlers' section, Click the green button on the right of &apos;Google&apos;.<br />
+				Then, click the Red Badge On the Right of &apos;Google&apos;.<br />
+				If attempting to authorize to Google results in the authorization page refreshing, please drag the Google Login Module to the very *top* of the list of login modules, then clear your browser cache and attempt again.
+			</p>
+			<div id="cr">
+				Copyright &copy; 2010-2012 <a target="_blank" href="http://www.marchertech.com">Marcher Technologies</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Google Login</hook_name>
+      <hook_desc>Displays the buttons required to allow the user to login with google</hook_desc>
+      <hook_author>Marcher Technologies</hook_author>
+      <hook_email>marchertech@gmail.com</hook_email>
+      <hook_website>http://marchertech.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:1:{s:4:"core";a:3:{s:8:"app_name";s:6:"System";s:11:"min_version";i:0;s:11:"max_version";i:0;}}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+	  <hook_version_human>1.0.6</hook_version_human>
+      <hook_version_long>10006</hook_version_long>
+      <hook_extra_data><![CDATA[a:5:{s:7:"display";a:4:{s:8:"settings";s:186:"Settings: Google &quot;Real Name/Display Name&quot;, Google Client ID for web application, Google Client Secret for web application, Google Default member group, Google Login Prompt Type";s:8:"language";s:684:"From core_public_login: enhancements_googlelogin_desc, enhancements_googlelogin_help, googlep_title, google_access_denied, google_already_linked, google_associate_offline, google_associate_offline_desc, google_disassociate, google_disassociate_desc, google_import_photo, google_linked_account, google_link_account, google_logged_in_as, google_offline, google_offline_desc, google_photo_import, google_remove_confirm, google_settings_hook_disabled, google_settings_module_disabled, google_userinfoemail, google_userinfoemail_desc, google_userinfoprofile, google_userinfoprofile_desc, g_assoc_removed, have_google, log_in_google, macro__google, manage_google, sign_in_google, use_google";s:8:"database";s:344:"ALTER TABLE members ADD google_access_token varchar(255) DEFAULT NULL<br />ALTER TABLE members ADD google_access_expires int(10) DEFAULT 0<br />ALTER TABLE members ADD google_refresh_token varchar(255) DEFAULT NULL<br />ALTER TABLE members ADD google_pass_reset int(1) DEFAULT 0<br />ALTER TABLE members ADD google_uid varchar(255) DEFAULT NULL";s:9:"templates";s:123:"From skin_google: displayAjaxButton, displayButton, displayIcon, displayRegister, displayReminder, loginPopup, manageGoogle";}s:8:"settings";a:5:{i:0;s:16:"google_client_id";i:1;s:20:"google_client_secret";i:2;s:17:"google_force_name";i:3;s:18:"google_login_force";i:4;s:11:"google_mgid";}s:8:"language";a:1:{s:17:"core_public_login";a:30:{i:0;s:29:"enhancements_googlelogin_desc";i:1;s:29:"enhancements_googlelogin_help";i:2;s:13:"googlep_title";i:3;s:20:"google_access_denied";i:4;s:21:"google_already_linked";i:5;s:24:"google_associate_offline";i:6;s:29:"google_associate_offline_desc";i:7;s:19:"google_disassociate";i:8;s:24:"google_disassociate_desc";i:9;s:19:"google_import_photo";i:10;s:21:"google_linked_account";i:11;s:19:"google_link_account";i:12;s:19:"google_logged_in_as";i:13;s:14:"google_offline";i:14;s:19:"google_offline_desc";i:15;s:19:"google_photo_import";i:16;s:21:"google_remove_confirm";i:17;s:29:"google_settings_hook_disabled";i:18;s:31:"google_settings_module_disabled";i:19;s:20:"google_userinfoemail";i:20;s:25:"google_userinfoemail_desc";i:21;s:22:"google_userinfoprofile";i:22;s:27:"google_userinfoprofile_desc";i:23;s:15:"g_assoc_removed";i:24;s:11:"have_google";i:25;s:13:"log_in_google";i:26;s:13:"macro__google";i:27;s:13:"manage_google";i:28;s:14:"sign_in_google";i:29;s:10:"use_google";}}s:9:"templates";a:1:{s:11:"skin_google";a:7:{i:0;s:17:"displayAjaxButton";i:1;s:13:"displayButton";i:2;s:11:"displayIcon";i:3;s:15:"displayRegister";i:4;s:15:"displayReminder";i:5;s:10:"loginPopup";i:6;s:12:"manageGoogle";}}s:8:"database";a:1:{s:5:"alter";a:5:{i:0;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:7:"members";s:5:"field";s:19:"google_access_token";s:8:"newfield";s:0:"";s:9:"fieldtype";s:12:"varchar(255)";s:7:"default";s:4:"NULL";}i:1;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:7:"members";s:5:"field";s:21:"google_access_expires";s:8:"newfield";s:0:"";s:9:"fieldtype";s:7:"int(10)";s:7:"default";s:1:"0";}i:2;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:7:"members";s:5:"field";s:20:"google_refresh_token";s:8:"newfield";s:0:"";s:9:"fieldtype";s:12:"varchar(255)";s:7:"default";s:4:"NULL";}i:3;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:7:"members";s:5:"field";s:17:"google_pass_reset";s:8:"newfield";s:0:"";s:9:"fieldtype";s:6:"int(1)";s:7:"default";s:1:"0";}i:4;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:7:"members";s:5:"field";s:10:"google_uid";s:8:"newfield";s:0:"";s:9:"fieldtype";s:12:"varchar(255)";s:7:"default";s:4:"NULL";}}}}]]></hook_extra_data>
+      <hook_key>google_login_method</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>googlePasswordReminder.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>googlePasswordReminder</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:14:"authenticating";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+class googlePasswordReminder
+{
+	public function __construct()
+	{
+			/* Make registry objects */
+		$this->registry		=  ipsRegistry::instance();
+		$this->DB			=  $this->registry->DB();
+		$this->settings		=& $this->registry->fetchSettings();
+		$this->request		=& $this->registry->fetchRequest();
+		$this->lang			=  $this->registry->getClass('class_localization');
+		$this->member		=  $this->registry->member();
+		$this->memberData	=& $this->registry->member()->fetchMemberData();
+		$this->cache		=  $this->registry->cache();
+		$this->caches		=& $this->registry->cache()->fetchCaches();
+		$this->lang->loadLanguageFile(array('public_usercp'), 'core');
+	}
+	public function getOutput()
+	{
+	$out = '';
+	if(!$this->memberData['google_access_token'] || intval($this->memberData['google_pass_reset']) || $this->memberData['g_access_cp'])
+	{
+		return $out;
+	}
+	//we in the right place?
+	if(intval($this->request['saved']) && $this->request['do']=='show' && $this->request['app']=='core' && $this->request['module']=='usercp' && $this->request['tab']=='core' && $this->request['area']=='email')
+	{
+IPSMember::save($this->memberData['member_id'], array('core' => array('google_pass_reset' => '1')));
+	return $out;
+	}
+
+	//add the Link, and we are outta here ;)
+	return $this->registry->output->getTemplate('google')->displayReminder();
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleManageAccount.php</hook_file_real>
+      <hook_type>libraryHooks</hook_type>
+      <hook_classname>googleManageAccount</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:4:"core";s:15:"classToOverload";s:16:"usercpForms_core";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+class googleManageAccount extends (~extends~)
+{
+	public $googleLib;
+	public function getLinks()
+	{
+		ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_login' ), 'core' );
+		$return = parent::getLinks();
+		foreach ($return as $tabk => $tabv)
+		{
+			if($tabk == 6)
+			{
+				$return[6] = array('url'    => 'area=managegoogle',
+						'title'  => $this->lang->words['manage_google'],
+						'active' => $this->request['tab'] == 'core' && $this->request['area'] == 'managegoogle' ? 1 : 0,
+						'area'   => 'managegoogle'
+				);
+				$return[7] = $tabv;
+			}
+			elseif($tabk > 6)
+			{
+				$return[$tabk+1] = $tabv;
+			}
+			else
+			{
+				$return[$tabk] = $tabv;
+			}
+		}
+
+		return $return;
+	}
+
+	public function showForm( $current_area, $errors=array() )
+	{
+	
+		if ( $current_area == 'managegoogle' )
+		{
+				$googleOauth    = IPSLib::loadLibrary( IPS_KERNEL_PATH . '/google/oauth.php', 'googleOauth' );
+  	$this->googleLib = new $googleOauth();
+  	$data = array();
+  $data['url'] = $this->googleLib->buildUrl($this->settings['board_url'].'/interface/board/linkgoogle.php', TRUE, array('https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'),
+  			'https://accounts.google.com/o/oauth2/auth?', FALSE, 'offline', 'force');
+  if($this->memberData['google_uid'])
+  {
+ 		 
+ 	if($this->memberData['google_access_token'])
+				 {
+				 	$this->googleLib->getData('https://www.googleapis.com/oauth2/v1/userinfo?access_token='.$this->memberData['google_access_token']);
+				 }
+				 //now we check it hasnt expired... sigh
+				 if(!is_array($this->googleLib->google['userinfo']) && $this->memberData['google_refresh_token'] && !$this->request['google'])
+				 {
+				 	$this->googleLib->refreshToken($this->memberData['google_refresh_token']);
+				 	if($this->googleLib->google['access_token'])
+				 	{
+				 		$this->googleLib->getData('https://www.googleapis.com/oauth2/v1/userinfo?access_token='.$this->googleLib->google['access_token']);
+				 	}
+				 }
+				 if(is_array($this->googleLib->google['userinfo']))
+				 {
+  	$data['userinfo'] = $this->googleLib->google['userinfo'];
+				 }
+  }
+  
+	$data['scopes']	= $this->googleLib->google['scopeData'];
+	if($this->memberData['google_refresh_token'])
+	{
+	$data['scopes'][] = 'google_offline';
+	}
+			$this->hide_form_and_save_button = 1;
+			if($this->request['photo'] && $this->request['secure_key']===$this->member->form_hash && $this->googleLib->google['userinfo']['picture'])
+			{
+			$pic =	$this->googleLib->fileManagement()->getFileContents($this->googleLib->google['userinfo']['picture']);
+			$ext = IPSText::getFileExtension($this->googleLib->google['userinfo']['picture']);
+			$time = $this->memberData['member_id'].'.'.$ext;
+			$tmp = md5($this->googleLib->google['userinfo']['id']).'.'.$ext;
+			file_put_contents( $this->settings['upload_dir'] .'/'. $tmp, $pic );
+			chmod(  $this->settings['upload_dir'].'/'. $tmp, IPS_FILE_PERMISSION );
+			require 'classImage.php';
+			$image = ips_kernel_image::bootstrap('gd');
+			
+			$image->init( array( 'image_path' => $this->settings['upload_dir'], 'image_file' => $tmp ) );
+			
+			if($image->hasXssInfile($this->settings['upload_dir'] .'/'.$tmp)===FALSE && is_array($image->extractImageData($this->settings['upload_dir'] .'/'.$tmp)))
+			{
+			$imageData = $image->extractImageData($this->settings['upload_dir'] .'/'.$tmp);
+			$image->writeImage($this->settings['upload_dir'] .'/profile/photo-'.$time);
+
+			IPSMember::save($this->memberData['member_id'], array('extendedProfile' => array('pp_main_photo' => 'profile/photo-'.$time,
+					'pp_main_width' => $imageData['width'],
+					'pp_main_height' => $imageData['height'],
+					'pp_photo_type' => 'custom',
+					'pp_thumb_photo' => 'profile/photo-'.$time,
+					'pp_thumb_height' => '100',
+					'pp_thumb_width' => '100')));
+		
+			}
+			@unlink($this->settings['upload_dir'] .'/'.$tmp);
+			$this->registry->output->redirectScreen($this->lang->words['google_photo_import'], $this->settings['base_url'].'app=core&module=usercp&tab=core&area=managegoogle');
+			}
+		if($this->request['unlink'] && $this->request['secure_key']===$this->member->form_hash)
+		{
+			$this->googleLib->removeToken($this->memberData);
+			
+							IPSMember::save( $this->memberData['member_id'], array( 'core' => array( 'google_uid' => '0' ) ) );
+							$this->registry->output->redirectScreen($this->lang->words['g_assoc_removed'], $this->settings['base_url'].'app=core&module=usercp&tab=core&area=managegoogle');
+		}	
+			if($this->request['google'])
+			{
+				
+			$this->googleLib->validateToken($this->settings['board_url'].'/interface/board/linkgoogle.php');
+				 if($this->googleLib->google['access_token'])
+				 {
+				 	$this->googleLib->getData('https://www.googleapis.com/oauth2/v1/userinfo?access_token='.$this->googleLib->google['access_token']);
+				 }
+				if ( $this->googleLib->google['userinfo']['id'] )
+				{
+					/* Test locally */
+					$localMember = $this->DB->buildAndFetch(array('select' => 'member_id', 'from' => 'members', 'where' => "google_uid='{$this->googleLib->google['userinfo']['id']}' AND member_id!='{$this->memberData['member_id']}'"));
+					$notify = '';
+				if( !$localMember['member_id'])
+					{
+						$this->googleLib->save($this->memberData);
+					
+					}
+					else
+					{
+						$notify .= '&error=linked_account';
+					}
+					
+				}
+				$this->registry->output->silentRedirect($this->registry->output->buildUrl('app=core&module=usercp&tab=core&area=managegoogle'.$notify));
+               
+			}
+			
+			return $this->registry->getClass('output')->getTemplate('google')->manageGoogle($data);
+		}
+
+		return parent::showForm( $current_area, $errors );
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleLoginDisplayButtonAjaxExtra.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>googleLoginDisplayButtonAjaxExtra</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:11:"inlineLogin";s:4:"type";s:2:"if";s:2:"id";s:16:"registerServices";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class googleLoginDisplayButtonAjaxExtra
+{
+    public function __construct()
+    {
+        $this->registry = ipsRegistry::instance();
+        $this->lang     = $this->registry->getClass('class_localization');
+         ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_login' ), 'core' );
+    }
+      
+    public function getOutput()
+    {
+    	
+         if(IPSLib::loginMethod_enabled('google') && ipsRegistry::$settings['google_client_id'] && ipsRegistry::$settings['google_client_secret'])
+        {
+            $IPBHTML .= $this->registry->output->getTemplate('google')->displayAjaxButton();
+        }
+        return $IPBHTML;
+    }               
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleLoginDisplayButton.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>googleLoginDisplayButton</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:10:"skin_login";s:12:"skinFunction";s:13:"showLogInForm";s:4:"type";s:2:"if";s:2:"id";s:14:"haswindowslive";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class googleLoginDisplayButton
+{
+    public function __construct()
+    {
+        $this->registry = ipsRegistry::instance();
+        $this->lang     = $this->registry->getClass('class_localization');
+          ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_login' ), 'core' );
+    }
+
+    public function getOutput()
+    {
+    	$IPBHTML = '';
+        if(IPSLib::loginMethod_enabled('google') && ipsRegistry::$settings['google_client_id'] && ipsRegistry::$settings['google_client_secret'])
+        {
+              $IPBHTML .= $this->registry->output->getTemplate('google')->displayButton();
+        }
+        return $IPBHTML;
+    }
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleLoginDisplayRegister.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>googleLoginDisplayRegister</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:13:"skin_register";s:12:"skinFunction";s:12:"registerForm";s:4:"type";s:2:"if";s:2:"id";s:16:"registerServices";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+class googleLoginDisplayRegister
+{
+	public function __construct()
+	{
+		$this->registry = ipsRegistry::instance();
+		$this->lang     = $this->registry->getClass('class_localization');
+		ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_login' ), 'core' );
+	}
+
+	public function getOutput()
+	{
+		$IPBHTML = '';
+		if(IPSLib::loginMethod_enabled('google') && ipsRegistry::$settings['google_client_id'] && ipsRegistry::$settings['google_client_secret'])
+		{
+      $IPBHTML .= $this->registry->output->getTemplate('google')->displayRegister();
+			
+		}
+		return $IPBHTML;
+	}
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleLoginDisplayIcon.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>googleLoginDisplayIcon</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:10:"limWindows";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class googleLoginDisplayIcon
+{
+    public function __construct()
+    {
+        $this->registry = ipsRegistry::instance();
+        $this->lang     = $this->registry->getClass('class_localization');
+        ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_login' ), 'core' );
+    }
+           
+    public function getOutput()
+    {   
+    	$IPBHTML = '';
+    	 if(IPSLib::loginMethod_enabled('google') && ipsRegistry::$settings['google_client_id'] && ipsRegistry::$settings['google_client_secret'])
+        {
+$IPBHTML .=  $this->registry->output->getTemplate('google')->displayIcon();
+}
+        return $IPBHTML;
+    }
+}
+?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>googleMembersListRows.php</hook_file_real>
+      <hook_type>libraryHooks</hook_type>
+      <hook_classname>googleMembersListRows</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:7:"members";s:15:"classToOverload";s:14:"cp_skin_member";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+class googleMembersListRows extends (~extends~)
+{
+
+	public function memberListRow( $member, $extraColumn=false ) {
+$someHTML = parent::memberListRow( $member, $extraColumn);
+$someHTML = $this->googleMemberRow($member, $someHTML);
+return $someHTML;
+	}
+//shouldnt ever happen, but sure, wth.
+public function memberListRow_incomplete( $member ) {
+$someHTML = parent::memberListRow_incomplete($member);
+$someHTML = $this->googleMemberRow($member, $someHTML);
+return $someHTML;
+}
+private function googleMemberRow($member, $output)
+{
+if ( $member['google_uid'] )
+{
+//ok, so they MAY not have a google plus account, but this is cheaper then checking that for every member by a mile.
+$_servicImg = "<a href='https://plus.google.com/{$member['google_uid']}' target='_blank'>
+<img src='{$this->settings['css_base_url']}/style_extra/signin/login-google-icon.png' /></a>&nbsp;";
+	$output = str_replace($member['email'], $_servicImg.$member['email'], $output);
+}
+return $output;
+}
+}
+?>
+]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title>Social Media and Sharing</conf_title_title>
+      <conf_title_desc>Settings for Facebook, Twitter, and other social media sharing tools.</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_tab>System</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_id>386</conf_id>
+      <conf_title>Google Client ID for web application</conf_title>
+      <conf_description><![CDATA[You *must* set up a Google Web Application. You can do that <a target="_blank" href="https://code.google.com/apis/console#access">here</a>
+The Redirect URIs *must* include {board_url}/interface/board/google.php AND {board_url}/interface/board/linkgoogle.php]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>google_client_id</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>43</conf_position>
+      <conf_start_group>Google Integration</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>387</conf_id>
+      <conf_title>Google Client Secret for web application</conf_title>
+      <conf_description><![CDATA[The Client secret "key" for your Web Application, this can be found <a target="_blank" href="https://code.google.com/apis/console#access">here</a> after setting up your web application.]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>google_client_secret</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>44</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>388</conf_id>
+      <conf_title><![CDATA[Google &quot;Real Name/Display Name&quot;]]></conf_title>
+      <conf_description><![CDATA[Specifies how you wish for the Google user's real name to be handled when creating a new forum account via logging in.<br /><br />You <strong>MUST</strong> have the setting 'Allow &quot;Display Names&quot;' enabled for this to work, otherwise the real name is enforced.]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>google_force_name</conf_key>
+      <conf_value/>
+      <conf_default>0</conf_default>
+      <conf_extra>0=Force Display Name Input&#13;
+1=Use Given Name&#13;
+2=Use Family Name&#13;
+3=Use Full Name</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>45</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>389</conf_id>
+      <conf_title>Google Login Prompt Type</conf_title>
+      <conf_description>Specifies whether Logging in through Google will Force a Prompt for Access, allowing no prompt WILL require re-association of the Account UCP area.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>google_login_force</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra>0=Automatic&#13;
+1=Forced</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>47</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>390</conf_id>
+      <conf_title>Google Default member group</conf_title>
+      <conf_description>Please select the default member group for new accounts created with Google log in.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>google_mgid</conf_key>
+      <conf_value/>
+      <conf_default>3</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>46</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </hookextras_settings>
+  <hookextras_language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>manage_google</word_key>
+      <word_default>Manage Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>macro__google</word_key>
+      <word_default>Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>log_in_google</word_key>
+      <word_default>Log In with Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>have_google</word_key>
+      <word_default>Have a Google Account?</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>g_assoc_removed</word_key>
+      <word_default>Google Account Association Removed</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_userinfoprofile_desc</word_key>
+      <word_default>This Is Required for the Application to Retrieve Your Information for Signing In and Other Services</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_userinfoprofile</word_key>
+      <word_default>Profile Information</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_userinfoemail_desc</word_key>
+      <word_default>This Is Required for the Application to Retrieve Your Information for Signing In and Other Services</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_userinfoemail</word_key>
+      <word_default>Email Access</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_remove_confirm</word_key>
+      <word_default>Are you sure you wish to disassociate Your Account From Google?</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_photo_import</word_key>
+      <word_default>Google Profile Photo Imported</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_offline</word_key>
+      <word_default>Offline Access</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_offline_desc</word_key>
+      <word_default><![CDATA[This Is Required To allow You to remove the Google Application, and allow the site to access services on your behalf <strong>with your permission</strong> even when you are not actively logged into Google. ]]></word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_logged_in_as</word_key>
+      <word_default>You are logged into Google as</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_link_account</word_key>
+      <word_default>Your account is currently not linked with a Google account. To link it to one press the button below. </word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_linked_account</word_key>
+      <word_default>This account has been, or is already, successfully linked with a Google account.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_disassociate_desc</word_key>
+      <word_default>This will remove the account link from Google and  remove the Google Application.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_import_photo</word_key>
+      <word_default>Import Profile Photo From Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_disassociate</word_key>
+      <word_default>Disassociate  Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_associate_offline_desc</word_key>
+      <word_default>The Site has detected that you have not granted offline access to your account. To allow removal of the Google Application from here, and ensure Full Functionality, you must grant this access.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_associate_offline</word_key>
+      <word_default>Offline Access</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_already_linked</word_key>
+      <word_default>The Google account you are logged into is already associated with another account on this site.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_access_denied</word_key>
+      <word_default>You have denied the Google Application access.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>enhancements_googlelogin_help</word_key>
+      <word_default><![CDATA[Click here to visit the Google APIs Console where you can setup/manage your web application, Client ID, Client secret, and redirect URI's.]]></word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_settings_hook_disabled</word_key>
+      <word_default>Warning! Google Login Hook Disabled.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>enhancements_googlelogin_desc</word_key>
+      <word_default>Allows users to sign into your community with their Google account.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>google_settings_module_disabled</word_key>
+      <word_default>Warning! Google Login Module Disabled.</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>googlep_title</word_key>
+      <word_default>Google Connect Permission Check</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>sign_in_google</word_key>
+      <word_default>Sign In with Google</word_default>
+    </language>
+    <language>
+      <word_app>core</word_app>
+      <word_pack>public_login</word_pack>
+      <word_key>use_google</word_key>
+      <word_default>Use Google</word_default>
+    </language>
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayAjaxButton</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayAjaxButton</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<div class='ipsBox_notice'>
+                <ul class='ipsList_inline'>
+                    <li><a href="{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key={$this->member->form_hash}" base="public"}" class='ipsButton_secondary' id='googleAjax'><img src='{$this->settings['board_url']}/public/style_extra/signin/login-google-icon.png' alt='{$this->lang->words['macro__google']}' /> &nbsp; {$this->lang->words['use_google']}</a></li>
+                </ul>
+            </div>
+<script type='text/javascript'>
+  $('googleAjax').observe( 'click', function(e) { 
+if ( $('inline_login_form') )
+{
+$('inline_login_form').hide();
+$('sign_in_popup_inner').hide();
+$('sign_in_popup_close').hide();
+}
+googlePop();
+Event.stop(e);
+
+return false;
+  });
+</script>]]></template_content>
+      <template_name>displayAjaxButton</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<p><input type="checkbox" class="input_check" value="1" name="use_google" id="use_google"> &nbsp; {$this->lang->words['sign_in_google']} &nbsp; <img src='{$this->settings['board_url']}/public/style_extra/signin/login-google-icon.png' alt='{$this->lang->words['macro__google']}' /></p><br />]]></template_content>
+      <template_name>displayButton</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayButton</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<li><a href='{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key={$this->member->form_hash}" base="public"}' class='ipsButton_secondary fixed_width' id='googleButton'><img src='{$this->settings['board_url']}/public/style_extra/signin/login-google-icon.png' alt='{$this->lang->words['macro__google']}' /> &nbsp; {$this->lang->words['sign_in_google']}</a></li>
+<script type='text/javascript'>
+ $('googleButton').observe( 'click', function(e) {
+googlePop();
+        Event.stop(e);
+        return false;
+  });
+</script>]]></template_content>
+      <template_name>displayButton</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<a href='{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['log_in_google']}' id='googleIcon'>
+<img src='{$this->settings['css_base_url']}/style_extra/signin/login-google-icon.png' alt='{$this->lang->words['log_in_google']}' />
+</a>
+{parse template="loginPopup" group="google"}
+<script type='text/javascript'>
+var _googleLogin = null;
+function googlePop()
+{
+if ( !$('googleOptions') )
+{
+return false;
+}
+if( !_googleLogin )
+{
+ _googleLogin = new ipb.Popup( 'google', { 
+type: 'pane',
+initial: $('googleOptions').innerHTML,
+hideAtStart: false,
+w: '600px',
+modal: 'true'
+} );
+}
+else
+{
+ _googleLogin.show();
+}
+}
+ $('googleIcon').observe( 'click', function(e) {
+googlePop();
+        Event.stop(e);
+        return false;
+  });
+</script>]]></template_content>
+      <template_name>displayIcon</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayIcon</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayIcon</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<div class='ipsBox_container ipsBox_notice ipsForm ipsForm_horizontal' id='gooogleBox'>
+<strong class='ipsField_title'>{$this->lang->words['have_google']}</strong>
+<div class='ipsField_content'>
+<ul class='ipsList_inline'>
+<li>
+<a href='{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key={$this->member->form_hash}" base="public"}' class='ipsButton_secondary fixed_width' id='googleBox_button'>
+<img src='{$this->settings['css_base_url']}/style_extra/signin/login-google-icon.png' alt='{$this->lang->words['macro__google']}' /> &nbsp; {$this->lang->words['sign_in_google']}
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script type='text/javascript'>
+ $('googleBox_button').observe( 'click', function(e) {
+googlePop();
+        Event.stop(e);
+        return false;
+  });
+</script>]]></template_content>
+      <template_name>displayRegister</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayRegister</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayRegister</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<li id='googleReset'>
+<a href='{parse url="app=core&amp;module=usercp&amp;tab=core&amp;area=email" base="public"}' title='{$this->lang->words['remote_no_password']}'>{$this->lang->words['account_pass_title']}
+</a>
+</li>]]></template_content>
+      <template_name>displayReminder</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayReminder</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>displayReminder</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>loginPopup</template_name>
+      <template_data/>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>loginPopup</template_name>
+      <template_data/>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<div id='googleOptions' style='display:none;'>
+<h3>{$this->lang->words['macro__google']} {$this->lang->words['sign_in_options']}</h3>
+	<form action="{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1" base="public"}" method="post" id='googleLogin'>
+<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+<input type="hidden" value="{$this->settings['this_url']}" name="referer">
+<fieldset id='googlesignin_options'>
+				<ul class='ipsForm ipsForm_vertical ipsPad_double'>
+					<li class='ipsField ipsField_checkbox clearfix'>
+						<input type='checkbox' id='remember' checked='checked' name='rememberMe' value='1' class='input_check' />
+						<p class='ipsField_content'>
+							<label for='remember'>{$this->lang->words['rememberme']}</label><br />
+							<span class='desc lighter'>{$this->lang->words['notrecommended']}</span>
+						</p>
+					</li>
+					<if test="anonymous:|:!$this->settings['disable_anonymous']">
+						<li class='ipsField ipsField_checkbox clearfix'>
+							<input type='checkbox' id='invisible' name='anonymous' value='1' class='input_check' />
+							<p class='ipsField_content'>
+								<label for='invisible'>{$this->lang->words['form_invisible']}</label><br />
+								<span class='desc lighter'>{$this->lang->words['anon_name']}</span>
+							</p>
+						</li>
+					</if>
+					<if test="privvy:|:$this->settings['priv_title']">
+					<li class='ipsPad_top ipsForm_center desc ipsType_smaller'>
+						<a rel="nofollow" href='{parse url="app=core&amp;module=global&amp;section=privacy" template="privacy" seotitle="false" base="public"}'>{$this->settings['priv_title']}</a>
+					</li>
+					</if>
+				</ul>
+			</fieldset>
+<div class='ipsForm_submit ipsForm_center'>
+					<input type='submit' class='ipsButton' value='{$this->lang->words['log_in']}' />
+				</div>
+</form>
+</div>]]></template_content>
+      <template_name>loginPopup</template_name>
+      <template_data/>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<if test="$this->request['error']">
+<p class='message error'>
+{$this->lang->words['google_'.$this->request['error']]}
+</p>
+<br />
+</if>
+<if test="!$this->memberData['google_uid']">
+    <div>
+        <p class='message'>{$this->lang->words['google_link_account']}</p>
+        <br />
+        <br />
+
+        <a href='{$google['url']}' title='{$this->lang->words['log_in_google']}' class='ipsButton_secondary fixed_width' id='googleLink'>
+<img src='{$this->settings['css_base_url']}/style_extra/signin/login-google-icon.png' /> &nbsp; {$this->lang->words['sign_in_google']}
+</a>
+        <br />
+        <br />
+    </div>
+    <else />
+ 
+	<div class='ipsPad clearfix'>
+       
+<if test="$google['userinfo']['picture']">
+
+<div class='clearfix row2 ipsPad_half'>
+<a href='{$google['userinfo']['link']}' rel='external' class='left ipsUserPhoto' style='margin-right:4px;'>
+					<img src="{$google['userinfo']['picture']}" alt="" class='ipsUserPhoto_medium' />
+				</a>
+				<div class='desc'>
+				{$this->lang->words['google_logged_in_as']} 
+<strong><a href='{$google['userinfo']['link']}' rel='external'>{$google['userinfo']['name']}</a></strong>
+				
+				</div>
+<p class='ipsPad_half'><span class='ipsButton_secondary fixed_width clickable' id='googlePhoto'>
+{$this->lang->words['google_import_photo']}
+</span></p>
+</div>
+<br />
+<script type="text/javascript">
+		$('googlePhoto').observe( 'click', google_photo );
+		function google_photo(){
+window.location = ipb.vars['base_url'] + 'app=core&module=usercp&tab=core&area=managegoogle&photo=1&secure_key=' + ipb.vars['secure_hash'];
+ 
+}
+		</script>
+    
+</if>
+<if test="is_array($google['scopes'])">
+<h3 class='ipsType_subtitle'>{$this->lang->words['googlep_title']}</h3>
+<ul>
+<foreach loop="$google['scopes'] as $scope">
+ <li class='field checkbox'>
+<img src="{$this->settings['img_url']}/accept.png" alt='' />&nbsp;{$this->lang->words[$scope]}
+  <br />
+<p class='desc' style='left:0px'>
+{$this->lang->words[$scope.'_desc']}
+</p>
+</li>
+</foreach>
+</ul>
+<br /> 
+</if>
+  <if test="!$this->memberData['google_refresh_token']">
+<h3 class='ipsType_subtitle'>{$this->lang->words['google_associate_offline']}</h3>
+<p class='desc'>{$this->lang->words['google_associate_offline_desc']}</p>
+				
+				<br />
+<a href='{$google['url']}' title='{$this->lang->words['fb_sync_now']}' class='ipsButton_secondary fixed_width' id='googleReLink'>
+<img src='{$this->settings['css_base_url']}/style_extra/signin/login-google-icon.png' /> &nbsp;{$this->lang->words['fb_sync_now']}
+</a>
+<else />
+<h3 class='ipsType_subtitle'>{$this->lang->words['google_disassociate']}</h3>
+				<p class='desc'>{$this->lang->words['google_disassociate_desc']}</p>
+				
+				<br />
+<p><span class='ipsButton_secondary important fixed_width clickable' id='googleUnLink'>
+ {$this->lang->words['fb_disassociate_now']}
+</span></p>
+				<br />
+    
+<script type="text/javascript">
+		$('googleUnLink').observe( 'click', google_remove );
+		function google_remove(){
+var gConfirm=confirm('{$this->lang->words['google_remove_confirm']}')
+if (gConfirm==true)
+  {
+window.location = ipb.vars['base_url'] + 'app=core&module=usercp&tab=core&area=managegoogle&unlink=1&secure_key=' + ipb.vars['secure_hash'];
+  }
+else
+  {
+  return gConfirm;
+  }
+}
+		</script>
+</if> 
+</div>
+</if>]]></template_content>
+      <template_name>manageGoogle</template_name>
+      <template_data>$google=array()</template_data>
+      <template_updated>1346996206</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>manageGoogle</template_name>
+      <template_data>$google=array()</template_data>
+      <template_updated>1346996211</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </templates>
+    <templates>
+      <template_group>skin_google</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>manageGoogle</template_name>
+      <template_data>$google=array()</template_data>
+      <template_updated>1346996208</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </templates>
+  </hookextras_templates>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>members</table>
+      <field>google_access_token</field>
+      <newfield/>
+      <fieldtype>varchar(255)</fieldtype>
+      <default>NULL</default>
+    </alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>members</table>
+      <field>google_access_expires</field>
+      <newfield/>
+      <fieldtype>int(10)</fieldtype>
+      <default>0</default>
+    </alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>members</table>
+      <field>google_refresh_token</field>
+      <newfield/>
+      <fieldtype>varchar(255)</fieldtype>
+      <default>NULL</default>
+    </alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>members</table>
+      <field>google_pass_reset</field>
+      <newfield/>
+      <fieldtype>int(1)</fieldtype>
+      <default>0</default>
+    </alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>members</table>
+      <field>google_uid</field>
+      <newfield/>
+      <fieldtype>varchar(255)</fieldtype>
+      <default>NULL</default>
+    </alter>
+  </hookextras_database_alter>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>
