@@ -35,7 +35,7 @@ if ($_GET['state'] || $_REQUEST['state']) {
 
 	$data = json_decode(base64_decode($state), 1);
 
-	if (isset($data['referer']) && strpos($data['referer'], 'app=core&amp;module=global&amp;section=login') !== FALSE) {
+	if (isset($data['referer']) && strpos($data['referer'], 'app=core&amp;module=global') !== FALSE) {
 		unset($data['referer']);
 	}
 
