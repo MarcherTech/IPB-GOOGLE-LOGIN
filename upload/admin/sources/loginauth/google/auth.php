@@ -67,17 +67,16 @@ class login_google extends login_core implements interface_login {
 				$this->registry->output->silentRedirect(ipsRegistry::$settings['base_url_https'] . "app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key=" . ipsRegistry::instance()->member()->form_hash);
 			}
 
-			$extra = '';
-			$extra .= 'auth_key~~' . ipsRegistry::instance()->member()->form_hash;
+			$extra['auth_key'] = ipsRegistry::instance()->member()->form_hash;
 			if ($this->request['rememberMe']) {
-				$extra .= ';rememberMe~~1';
+				$extra['rememberMe'] = 1;
 			}
 
 			if ($this->request['anonymous']) {
-				$extra .= ';anonymous~~1';
+				$extra['anonymous'] = 1;
 			}
 			if ($this->request['referer']) {
-				$extra .= ';referer~~' . urlencode($this->request['referer']);
+				$extra['referer'] = $this->request['referer'];
 			}
 			if (!intval(ipsRegistry::$settings['google_login_force'])) {
 				$type = 'online';
@@ -86,6 +85,8 @@ class login_google extends login_core implements interface_login {
 				$type = 'offline';
 				$prompt = 'force';
 			}
+
+			$extra = base64_encode(json_encode($extra));
 
 			$google_url = $this->googleLib->buildUrl($board_url . '/interface/board/google.php', TRUE, array('https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'), 'https://accounts.google.com/o/oauth2/auth?', $extra, $type, $prompt);
 
