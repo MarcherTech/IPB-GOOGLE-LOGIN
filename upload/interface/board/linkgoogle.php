@@ -34,37 +34,7 @@ if ( ! $_REQUEST['code'] AND $_REQUEST['do'] )
 {
 	$_REQUEST['google'] = $_REQUEST['do'];
 }
-if($_GET['state'] || $_REQUEST['state'])
-{
-	$state = $_GET['state']?$_GET['state']:$_REQUEST['state'];
-	
-$data = array();
-	if(strpos($state, ';')!==FALSE)
-	{
-		$states = explode(';', $state);
-		foreach($states as $s)
-		{
-			if(strpos($s, '~~')!==FALSE)
-			{
-				$data[] = explode('~~', $s);
-			}
-		}
-	}
-	elseif(strpos($state, '~~')!==FALSE)
-	{
-		$data[] = explode('~~', $state);
-	}
-	if(count($data))
-	{
-		foreach($data as $val)
-		{
-		
-			$_GET[$val[0]] = $val[1];
-			$_REQUEST[$val[0]] = $val[1];
-			
-		}
-	}
-}
+
 unset($_REQUEST['code']);
 ipsController::run();
 
