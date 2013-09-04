@@ -29,27 +29,19 @@ if (!$_GET['code'] AND $_GET['do']) {
 if (!$_REQUEST['code'] AND $_REQUEST['do']) {
 	$_REQUEST['google'] = $_REQUEST['do'];
 }
+
 if ($_GET['state'] || $_REQUEST['state']) {
 	$state = $_GET['state'] ? $_GET['state'] : $_REQUEST['state'];
 
-	$data = array();
-	if (strpos($state, ';') !== FALSE) {
-		$states = explode(';', $state);
-		foreach ($states as $s) {
-			if (strpos($s, '~~') !== FALSE) {
-				$data[] = explode('~~', $s);
-			}
-		}
-	} elseif (strpos($state, '~~') !== FALSE) {
-		$data[] = explode('~~', $state);
-	}
-	if (count($data)) {
-		foreach ($data as $val) {
+	$data = json_decode(base64_decode($state), 1);
 
-			$_GET[$val[0]] = $val[1];
-			$_REQUEST[$val[0]] = $val[1];
-		}
+	if (isset($data['referer']) && strpos($data['referer'], 'app=core&amp;module=global&amp;section=login') !== FALSE) {
+		unset($data['referer']);
 	}
+
+	$_GET = array_merge($_GET, $data);
+	$_REQUEST = array_merge($_REQUEST, $data);
+
 }
 //now reset.
 $_REQUEST['do'] = 'process';
